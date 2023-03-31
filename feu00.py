@@ -1,5 +1,12 @@
 import sys
 
+# Function to manage index errors
+def areArgsValid(argArray):
+    if len(argArray) != 3 or argArray[1] == 0 or argArray[2] == 0:
+        return False
+    else:
+        return True
+
 # Function to print out a rectangle
 def rectangle(column, line):
     c = column
@@ -16,18 +23,5 @@ def rectangle(column, line):
                 print("  ", end="")
         print()
 
-# Function to manage value and index errors
-def try_except():
-    try:
-        column = int(sys.argv[1])
-        line = int(sys.argv[2])
-    except (ValueError, IndexError):
-        print("Invalid input. Please provide two numbers.")
-        sys.exit()
-    return column, line
-
-# Resolution
-column, line = try_except()
-
-# Print out result
-rectangle(column, line)
+# Resolution and print out result
+rectangle(int(sys.argv[1]), int(sys.argv[2])) if areArgsValid(sys.argv) == True else sys.exit("Invalid input. Please provide one number for length, and one number for width.")
