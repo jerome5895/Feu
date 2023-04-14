@@ -1,10 +1,13 @@
 import sys
 
-# Convert globales variables
+def evaluate(expression):
+    try:
+        return eval(expression)
+    except(SyntaxError, ZeroDivisionError, NameError):
+        print("Invalid input. The arithmetic expression is false.")
+        exit()
+
 expression = sys.argv[1]
 
-# Separate argument to a list of tokens
-tokens = expression.split()
-
-# Print out result
-print(tokens)
+result = evaluate(expression)
+print("The result of your arithmetic expresssion is: ", result)
