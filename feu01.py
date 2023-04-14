@@ -3,8 +3,8 @@ import sys
 # Convert globales variables
 expression = sys.argv[1]
 
-# Resolution
-result = eval(expression)
+# Separate argument to a list of tokens
+tokens = expression.split()
 
 # Print out result
-print(result)
+print(tokens)
