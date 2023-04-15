@@ -1,4 +1,4 @@
-# Définition de la fonction qui évalue une expression entre parenthèses
+# Definition de la fonction qui evalue une expression entre parentheses
 def eval_parentheses(tokens):
     stack = []
     for token in tokens:
@@ -14,7 +14,7 @@ def eval_parentheses(tokens):
             stack.append(token)
     return eval_expr(stack)
 
-# Définition de la fonction qui évalue une expression
+# Definition de la fonction qui evalue une expression
 def eval_expr(tokens):
     operators = ['+', '-', '*', '/', '%']
     for operator in operators:
