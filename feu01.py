@@ -33,10 +33,7 @@ def eval_expr(tokens):
                 elif operator == '%':
                     return left % right
     if len(tokens) == 1:
-        if tokens[0].isdigit():
             return int(tokens[0])
-        else:
-            return eval_expr(tokens[1:-1])
     else:
         return eval_parentheses(tokens)
     
