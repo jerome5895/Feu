@@ -33,7 +33,7 @@ def eval_expr(tokens):
                 elif operator == '%':
                     return left % right
     if len(tokens) == 1:
-            return int(tokens[0])
+            return float(tokens[0])
     else:
         return eval_parentheses(tokens)
     
