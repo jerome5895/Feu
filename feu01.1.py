@@ -1,5 +1,6 @@
 mod = 1000000007
 
+# Function to evaluate arithmetic expression
 def ValOfTheExpression(n):
     global mod
 
@@ -19,6 +20,7 @@ def ValOfTheExpression(n):
 
     return dp[n]
 
+# Main program
 if __name__ == '__main__':
     n = 4
     print(ValOfTheExpression(n))
