@@ -1,6 +1,6 @@
 import sys
 
-
+# Function to evaluate an arithmetic expression
 def evaluer_expression(expression):
     operandes = []
     operateurs = []
@@ -35,9 +35,11 @@ def evaluer_expression(expression):
         calculer_operation()
     return operandes[0]
 
-
+# Globales variables
 expression = sys.argv[1]
 
+# Resolution
 resultat = evaluer_expression(expression)
 
+# Print out result
 print(resultat)
