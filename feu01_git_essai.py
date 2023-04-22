@@ -32,9 +32,11 @@ def calculate_operation(operands, operators):
     elif operator == '%':
         operands.append(operand1 % operand2)
 
-
+# Globales variables
 expression = sys.argv[1]
 
+# Resolution
 result = evaluate_expression(expression, calculate_operation)
 
+# Print out result
 print(result)
