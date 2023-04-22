@@ -1,10 +1,26 @@
 import sys
 
 # Function to evaluate an arithmetic expression
-def evaluate_expression(expression, calculate_operation):
+def evaluate_expression(expression):
 
     operands = []
     operators = []
+
+    def calculate_operation():
+        operator = operators.pop()
+        operand2 = operands.pop()
+        operand1 = operand2.pop()
+
+        if operator == '+':
+            operands.append(operand1 + operand2)
+        elif operator == '-':
+            operands.append(operand1 - operand2)
+        elif operator == '*':
+            operands.append(operand1 * operand2)
+        elif operator == '/':
+            operands.append(operand1 / operand2)
+        elif operator == '%':
+            operands.append(operand1 % operand2)
 
     for character in expression:
         if character.isdigit():
@@ -15,28 +31,8 @@ def evaluate_expression(expression, calculate_operation):
 
     return operands[0]
 
-# Function to calculate binary operations
-def calculate_operation(operands, operators):
-    operator = operators.pop()
-    operand2 = operands.pop()
-    operand1 = operand2.pop()
-
-    if operator == '+':
-        operands.append(operand1 + operand2)
-    elif operator == '-':
-        operands.append(operand1 - operand2)
-    elif operator == '*':
-        operands.append(operand1 * operand2)
-    elif operator == '/':
-        operands.append(operand1 / operand2)
-    elif operator == '%':
-        operands.append(operand1 % operand2)
-
-# Globales variables
 expression = sys.argv[1]
 
-# Resolution
-result = evaluate_expression(expression, calculate_operation)
+result = evaluate_expression(expression)
 
-# Print out result
 print(result)
