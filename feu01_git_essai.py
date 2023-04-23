@@ -20,7 +20,9 @@ def evaluate_expression(expression):
         elif operator == '%':
             operands.append(operand1 % operand2)
 
+    # Make priority
     precedence = {'+': 1, '-': 1, '*': 2, '/': 2, '%': 2}
+
 
     for character in expression:
         if character.isdigit():
@@ -39,11 +41,11 @@ def evaluate_expression(expression):
 
     return operands[0]
 
-
+# Globales variables
 expression = sys.argv[1]
 
-
+# Resolution
 result = evaluate_expression(expression)
 
-
+# Print out result
 print(result)
