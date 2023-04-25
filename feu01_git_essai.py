@@ -1,9 +1,11 @@
 # Function to evaluate an arithmetic expression
 def evaluate_expression(expression):
 
+# Initialize stacks
     operands = []
     operators = []
 
+# Function to calcul binary operation
     def calculate_operation():
         operator = operators.pop()
         operand2 = operands.pop()
@@ -22,7 +24,6 @@ def evaluate_expression(expression):
 
     # Make priority
     precedence = {'+': 1, '-': 1, '*': 2, '/': 2, '%': 2}
-
 
     for character in expression:
         if character.isdigit():
